@@ -141,18 +141,3 @@ class Pricing:
         for i in range(1, len(discounts_list)):
             if discounts_list[i-1][0] <= amount < discounts_list[i][0]:
                 return discounts_list[i-1][1]
-            
-        
-
-        
-
-
-disc = {'1000': 3, '5000': 5, '7000': 7, '10000': 10}
-tax = {'AB': 5, 'ON': 13, 'QC': 14.975, 'MI': 6, 'DE': 0}
-
-# p = Pricing()
-# p = Pricing(discounts_path=r"config\discounts.yaml", tax_rates_path=r"config\tax_rates.yaml")
-p = Pricing(discounts=disc,tax_rates=tax)
-
-print(p.calculate(12,212.5,'AB'))
-print(p.calculate(14,1008.42,'QC'))
